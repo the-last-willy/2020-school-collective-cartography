@@ -1,0 +1,92 @@
+html {
+    background-color: lightgray;
+}
+
+body {
+    box-sizing: border-box;
+
+    /* width: 21cm; */
+
+    margin: auto;
+
+    /* padding: 2cm 2cm; */
+
+    background-color: white;
+}
+
+img {
+    page-break-inside: avoid;
+}
+
+.column-2 {
+    column-count: 2;
+}
+
+.document {
+    font-size: 18px;
+
+    counter-reset: section;
+}
+
+.document .author {
+    margin-bottom: 2cm;
+
+    font-size: 20px;
+}
+
+.document .paragraph {
+    margin-top: 0.2cm;
+
+    text-align: justify;
+}
+
+.document .section {
+    margin-top: 1cm;
+
+    padding-bottom: 0.2cm;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    counter-reset: subsection;
+}
+
+.document .section::before {
+    content: counter(section, upper-roman) ". ";
+    counter-increment: section;
+}
+
+.document .subsection {
+    margin-top: 0.5cm;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.document .subsection::before {
+    content: counter(section, upper-roman) "." counter(subsection) ". ";
+    counter-increment: subsection;
+}
+
+.document .title {
+    margin-bottom: 1cm;
+
+    font-size: 35px;
+}
+
+.mh-auto {
+    display: block;
+    margin: 0 auto;
+}
+
+.text-indent {
+    text-indent: 0.5cm;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
